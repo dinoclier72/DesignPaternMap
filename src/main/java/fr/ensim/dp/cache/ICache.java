@@ -1,5 +1,7 @@
 package fr.ensim.dp.cache;
 
+import fr.ensim.dp.cache.filter.IFilterCache;
+
 /**
  * @author Denis Apparicio
  *
@@ -38,5 +40,10 @@ public interface ICache {
    */
   void clear();
 
-
+  /**
+   * Ajoute un fillre
+   * @param filter
+   * 	filtre à ajouter
+   */
+  void setFilterCache(IFilterCache filter);
 }

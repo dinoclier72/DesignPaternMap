@@ -1,5 +1,6 @@
 package fr.ensim.dp.cache;
 
 public interface IFactoryCache {
-	ICache createCache();
+	ICache memoryCache();
+	ICache diskCache(String type);
 }

@@ -7,18 +7,24 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.HashMap;
 
+import fr.ensim.dp.cache.filter.IFilterCache;
 import fr.ensim.dp.util.FileUtil;
 
-public class DiskCache implements ICache {
-	private DiskCache(String type) throws IOException {
+class DiskCache implements ICache {
+	private DiskCache(String type){
 		repertory = "./Maps/"+type+"/";
-		Files.createDirectories(Paths.get(repertory));
+		try {
+			Files.createDirectories(Paths.get(repertory));
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		// repertory en file drectement --> file.mkdir() et FIles(file,key) pour le reste
 	}
 	
 	private static HashMap<String, DiskCache> diskMaps = new HashMap<String, DiskCache>();
 	
-	public static DiskCache getInstance(String type) throws IOException {
+	public static DiskCache getInstance(String type){
 		if(diskMaps.containsKey(type)) {
 			return diskMaps.get(type);
 		}
@@ -27,6 +33,7 @@ public class DiskCache implements ICache {
 	}
 	
 	private String repertory;
+	private IFilterCache filter = null;
 
 	@Override
 	public long size() {
@@ -35,13 +42,20 @@ public class DiskCache implements ICache {
 
 	@Override
 	public boolean add(String key, byte[] buf) {
+		if(filter != null) {
+			filter.doAdd(key, buf);
+		}
 		return FileUtil.copy(new ByteArrayInputStream(buf), new File(repertory+key));
 	}
 
 	@Override
 	public byte[] retreive(String key) {
+		byte[] buf;
 		try {
-			return FileUtil.readFile(new File(repertory+key));
+			buf =  FileUtil.readFile(new File(repertory+key));
+			if(filter != null) {
+				filter.doRetreive(key, buf);
+			}
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -52,6 +66,12 @@ public class DiskCache implements ICache {
 	@Override
 	public void clear() {
 		FileUtil.deleteDirectory(new File(repertory));
+	}
+
+	@Override
+	public void setFilterCache(IFilterCache filter) {
+		// TODO Auto-generated method stub
+		this.filter  = filter;
 	}
 
 }

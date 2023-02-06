@@ -3,7 +3,9 @@ package fr.ensim.dp.cache;
 import java.util.HashMap;
 import java.util.Map;
 
-public class MemoryCache implements ICache {
+import fr.ensim.dp.cache.filter.IFilterCache;
+
+class MemoryCache implements ICache {
 	private MemoryCache() {
 		
 	}
@@ -22,6 +24,7 @@ public class MemoryCache implements ICache {
 	}
 	
 	private HashMap<String, byte[]> stockage = new HashMap<String,byte[]>();
+	private IFilterCache filter = null;
 
 	@Override
 	public long size() {
@@ -34,17 +37,30 @@ public class MemoryCache implements ICache {
 
 	@Override
 	public boolean add(String key, byte[] buf) {
+		if(filter != null) {
+			filter.doAdd(key, buf);
+		}
 		return (stockage.put(key, buf) != null);
 	}
 
 	@Override
 	public byte[] retreive(String key) {
-		return stockage.get(key);
+		byte[] buf = stockage.get(key);
+		if(filter != null) {
+			filter.doRetreive(key, buf);
+		}
+		return buf;
 	}
 
 	@Override
 	public void clear() {
 		stockage.clear();
+	}
+
+	@Override
+	public void setFilterCache(IFilterCache filter) {
+		// TODO Auto-generated method stub
+		this.filter = filter;
 	}
 
 }

@@ -2,7 +2,6 @@ package fr.ensim.dp.cache;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import java.io.IOException;
 import java.util.Arrays;
 
 import org.junit.jupiter.api.BeforeAll;
@@ -12,13 +11,13 @@ class DiskCacheTest {
 	static DiskCache d;
 	static byte[] b = {1,12,3};
 	@BeforeAll
-	static void init() throws IOException {
+	static void init(){
 		d = DiskCache.getInstance("test");
 		//d = new DiskCache("test");
 	}
 	
 	@Test
-	void testAll() throws IOException {
+	void testAll(){
 		assertEquals(d, DiskCache.getInstance("test"));
 		assertTrue(d.add("oui", b));
 		assertEquals(3, d.size());

@@ -5264,3 +5264,14 @@
 2021-03-28 23:00:54,292 DEBUG fr.ensim.dp.map.tile.OpenStreetMapTileProviderInfo - <<getTileUrl http://tile.openstreetmap.org/14/8099/5756.png
 2021-03-28 23:00:54,292 DEBUG fr.ensim.dp.map.tile.OpenStreetMapTileProviderInfo - >>getTileUrl [8099, 5757, 3]
 2021-03-28 23:00:54,292 DEBUG fr.ensim.dp.map.tile.OpenStreetMapTileProviderInfo - <<getTileUrl http://tile.openstreetmap.org/14/8099/5757.png
+2023-02-06 17:30:15,377 DEBUG fr.ensim.dp.cache.filter.LogFilterCache - ajout de donnee
+2023-02-06 17:31:00,134 DEBUG fr.ensim.dp.cache.filter.LogFilterCache - ajout de donnee
+2023-02-06 17:32:15,810 DEBUG fr.ensim.dp.cache.filter.LogFilterCache - ajout de donnee
+2023-02-06 17:32:57,618 DEBUG fr.ensim.dp.cache.filter.LogFilterCache - ajout de donnee
+2023-02-06 17:32:57,658 DEBUG fr.ensim.dp.cache.filter.LogFilterCache - recuperation de la donne
+2023-02-06 17:34:37,520 DEBUG fr.ensim.dp.cache.filter.LogFilterCache - ajout de donnee
+2023-02-06 17:34:37,560 DEBUG fr.ensim.dp.cache.filter.LogFilterCache - recuperation de la donne
+2023-02-06 18:11:06,422 DEBUG fr.ensim.dp.cache.filter.LogFilterCache - ajout de donnee
+2023-02-06 18:11:06,465 DEBUG fr.ensim.dp.cache.filter.LogFilterCache - recuperation de la donne
+2023-02-06 18:16:42,842 DEBUG fr.ensim.dp.cache.filter.LogFilterCache - ajout de donnee
+2023-02-06 18:16:42,886 DEBUG fr.ensim.dp.cache.filter.LogFilterCache - recuperation de la donne
