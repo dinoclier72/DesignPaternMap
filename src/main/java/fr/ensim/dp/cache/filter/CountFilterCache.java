@@ -16,10 +16,10 @@ public class CountFilterCache implements IFilterCache {
 
 	@Override
 	public byte[] doRetreive(String key, byte[] buf) {
-		retrieveCount++;
 		if(next != null) {
-			return next.doRetreive(key, buf);
+			buf = next.doRetreive(key, buf);
 		}
+		retrieveCount++;
 		return buf;
 	}
 

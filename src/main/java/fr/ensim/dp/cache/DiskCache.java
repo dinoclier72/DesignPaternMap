@@ -43,7 +43,7 @@ class DiskCache implements ICache {
 	@Override
 	public boolean add(String key, byte[] buf) {
 		if(filter != null) {
-			filter.doAdd(key, buf);
+			buf = filter.doAdd(key, buf);
 		}
 		return FileUtil.copy(new ByteArrayInputStream(buf), new File(repertory+key));
 	}
@@ -54,7 +54,7 @@ class DiskCache implements ICache {
 		try {
 			buf =  FileUtil.readFile(new File(repertory+key));
 			if(filter != null) {
-				filter.doRetreive(key, buf);
+				buf = filter.doRetreive(key, buf);
 			}
 		} catch (IOException e) {
 			// TODO Auto-generated catch block

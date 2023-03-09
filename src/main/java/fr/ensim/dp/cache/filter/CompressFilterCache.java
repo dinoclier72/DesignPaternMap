@@ -26,14 +26,15 @@ public class CompressFilterCache implements IFilterCache {
 
 	@Override
 	public byte[] doRetreive(String key, byte[] buf) {
+		if(next != null) {
+			buf = next.doRetreive(key, buf);
+		}
+
 		try {
 			buf = GzipUtil.uncompress(buf);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}
-		if(next != null) {
-			return next.doRetreive(key, buf);
 		}
 		return buf;
 	}

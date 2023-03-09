@@ -38,7 +38,7 @@ class MemoryCache implements ICache {
 	@Override
 	public boolean add(String key, byte[] buf) {
 		if(filter != null) {
-			filter.doAdd(key, buf);
+			buf = filter.doAdd(key, buf);
 		}
 		return (stockage.put(key, buf) != null);
 	}
@@ -47,7 +47,7 @@ class MemoryCache implements ICache {
 	public byte[] retreive(String key) {
 		byte[] buf = stockage.get(key);
 		if(filter != null) {
-			filter.doRetreive(key, buf);
+			buf = filter.doRetreive(key, buf);
 		}
 		return buf;
 	}

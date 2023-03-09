@@ -5275,3 +5275,20 @@
 2023-02-06 18:11:06,465 DEBUG fr.ensim.dp.cache.filter.LogFilterCache - recuperation de la donne
 2023-02-06 18:16:42,842 DEBUG fr.ensim.dp.cache.filter.LogFilterCache - ajout de donnee
 2023-02-06 18:16:42,886 DEBUG fr.ensim.dp.cache.filter.LogFilterCache - recuperation de la donne
+2023-03-01 02:04:23,737 DEBUG fr.ensim.dp.cache.filter.LogFilterCache - ajout de donnee
+2023-03-01 02:04:23,745 DEBUG fr.ensim.dp.cache.filter.LogFilterCache - recuperation de la donne
+2023-03-01 02:04:23,751 DEBUG fr.ensim.dp.cache.filter.LogFilterCache - ajout de donnee
+2023-03-01 02:04:23,752 DEBUG fr.ensim.dp.cache.filter.LogFilterCache - ajout de donnee
+2023-03-01 02:04:23,754 DEBUG fr.ensim.dp.cache.filter.LogFilterCache - recuperation de la donne
+2023-03-01 02:05:35,168 DEBUG fr.ensim.dp.cache.filter.LogFilterCache - ajout de donnee
+2023-03-01 02:05:35,173 DEBUG fr.ensim.dp.cache.filter.LogFilterCache - recuperation de la donne
+2023-03-01 02:10:46,916 DEBUG fr.ensim.dp.cache.filter.LogFilterCache - ajout de donnee
+2023-03-01 02:11:16,914 DEBUG fr.ensim.dp.cache.filter.LogFilterCache - ajout de donnee
+2023-03-01 02:11:16,919 DEBUG fr.ensim.dp.cache.filter.LogFilterCache - recuperation de la donne
+2023-03-01 16:28:12,620 DEBUG fr.ensim.dp.cache.filter.LogFilterCache - ajout de donnee
+2023-03-01 16:29:16,814 DEBUG fr.ensim.dp.cache.filter.LogFilterCache - ajout de donnee
+2023-03-01 16:29:16,850 DEBUG fr.ensim.dp.cache.filter.LogFilterCache - recuperation de la donne
+2023-03-01 16:30:38,983 DEBUG fr.ensim.dp.cache.filter.LogFilterCache - ajout de donnee
+2023-03-01 16:32:29,978 DEBUG fr.ensim.dp.cache.filter.LogFilterCache - ajout de donnee
+2023-03-01 16:34:44,662 DEBUG fr.ensim.dp.cache.filter.LogFilterCache - ajout de donnee
+2023-03-01 16:34:44,666 DEBUG fr.ensim.dp.cache.filter.LogFilterCache - recuperation de la donne

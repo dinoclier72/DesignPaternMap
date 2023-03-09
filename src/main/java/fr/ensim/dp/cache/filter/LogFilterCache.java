@@ -22,10 +22,10 @@ public class LogFilterCache implements IFilterCache {
 
 	@Override
 	public byte[] doRetreive(String key, byte[] buf) {
-		log.debug("recuperation de la donne");
 		if(next != null) {
-			return next.doRetreive(key, buf);
+			buf =  next.doRetreive(key, buf);
 		}
+		log.debug("recuperation de la donne");
 		return buf;
 	}
 
